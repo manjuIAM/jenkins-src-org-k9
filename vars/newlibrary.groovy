@@ -8,7 +8,7 @@ def call(body) {
     body()
 
     node {
-      new scm.Git(this,config).checkout();
+      new scm.Git(this,config).checkout("https://github.com/kloud9nyc/daac.git","master");
       new builder.Maven(this,config).build();
     }
 
