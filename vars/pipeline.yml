@@ -1,0 +1,7 @@
+---
+pipelineJob: SpringBot 
+runTests: true
+scmurl : ""
+scmbranch : ""
+testCommand: "mvn clean install"
+deployUponTestSuccess: true
