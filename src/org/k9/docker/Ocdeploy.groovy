@@ -14,5 +14,5 @@ class Ocdeploy implements Serializable {
 
   void deploy(){
     this.script.stage('Starting Deployment on OC')      
-    this.script.sh(oc this.appname this.dockerimagename)
+    this.script.sh('oc this.appname this.dockerimagename')
 }
