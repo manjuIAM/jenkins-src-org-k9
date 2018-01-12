@@ -11,7 +11,15 @@ class DockerActivity implements Serializable {
 
   void build() {
     this.script.stage('Building Image') {
-        this.script.sh('docker build -t maven:springboot -f resources/org/k9/docker/maven.docker')
+        this.script.sh('docker build -t maven:springboot -f maven.docker resources/org/k9/docker/')
+    }
   }
-}
+
+  void dpush() {
+    this.script.stage('Pushing Image') {
+        this.script.docker.withRegistry('https://registry.hub.docker.com', 'dlogin') {
+            docker.image('maven').push('springboot')
+        }
+    }
+  }
 }
