@@ -9,9 +9,9 @@ class DockerActivity {
     this.script = script
   }
 
-  void buil() {
+  void build() {
     this.script.stage('Building Image') {
-        def request = libraryResource 'org/k9/dockerfile/'+this.config.env
-        this.script.sh('docker build -t '+  +' .')
+        def request = libraryResource "org/k9/docker/maven.docker"
+        this.script.sh('docker build -t maven:springboot -f '+ request)
   }
 }
