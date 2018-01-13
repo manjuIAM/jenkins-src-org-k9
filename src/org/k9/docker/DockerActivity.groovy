@@ -1,6 +1,6 @@
 package org.k9.docker
 
-class DockerActivity {
+class DockerActivity implements Serializable {
   def config
   def script
 
