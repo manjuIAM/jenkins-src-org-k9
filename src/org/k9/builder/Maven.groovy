@@ -14,7 +14,7 @@ class Maven implements Serializable {
        if (this.config.testis_required == false) {
            this.script.sh(this.config.buildstep.trim() + '-Dmaven.test.skip=' + this.config.testis_required)
        } else {
-           this.script.sh(this.config.buildstep.trim())
+           this.script.sh(this.config.buildstep)
        }
     }
   }
