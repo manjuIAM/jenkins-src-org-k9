@@ -15,3 +15,4 @@ class DockerActivity {
         this.script.sh('docker build -t maven:springboot -f '+ request)
   }
 }
+}
