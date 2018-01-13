@@ -11,9 +11,6 @@ class Git implements Serializable {
   }
 
   void checkout(def url=false, def branch=false) {
-    if (Strings.isNullOrEmpty(this.config.branch)) {
-	this.config.branch = 'master'
-    }
     if (url != false) {
        this.config.url = url
        if (branch != false) {
