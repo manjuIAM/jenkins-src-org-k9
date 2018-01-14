@@ -18,10 +18,9 @@ class DockerActivity implements Serializable {
 
   void dpush() {
     this.script.stage('Pushing Image') {
-        this.script.docker.withRegistry('https://registry.hub.docker.com', 'dlogin') {
+        this.script.sh('docker login https://registry.hub.docker.com -u amydocker -p @mitabh.91')
             this.script.sh("docker tag maven:springboot amydocker/maven:springboot")
             this.script.sh("docker push amydocker/maven:springboot")
-        }
     }
   }
 }
