@@ -11,12 +11,7 @@ class Maven implements Serializable {
 
   void mbuild() {
     this.script.stage('Build Artifcat') {
-       if (this.config.test == false) {
            this.script.sh("mvn clean install")
-           //this.script.sh(this.config.buildstep.trim())
-       } else {
-           this.script.sh("mvn clean install")
-       }
     }
   }
 }
