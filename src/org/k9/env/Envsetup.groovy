@@ -1,10 +1,10 @@
-package org.k9.builder
+package org.k9.env
 
-class Maven implements Serializable {
+class Envsetup implements Serializable {
   def config
   def script
 
-  Maven(script,config) {
+  Envsetup(script,config) {
     this.config = config
     this.script = script
   }
