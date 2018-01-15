@@ -12,7 +12,7 @@ class Maven implements Serializable {
   void build() {
     this.script.stage('Build Artifcat') {
        if (this.config.test == false) {
-           this.script.sh(this.config.buildstep.trim() + ' -Dmaven.test.skip=' + this.config.test)
+           this.script.sh(this.config.buildstep.trim())
        } else {
            this.script.sh(this.config.buildstep)
        }
