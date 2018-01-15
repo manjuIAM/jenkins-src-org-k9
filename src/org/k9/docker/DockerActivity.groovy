@@ -3,7 +3,7 @@ package org.k9.docker
 class DockerActivity implements Serializable {
   def config
   def script
-  def dbuild
+  def app
 
   DockerActivity(script, config) {
     this.config = config
@@ -16,11 +16,17 @@ class DockerActivity implements Serializable {
     }
   }
 
+  void dbuild() {
+    this.script.stage('Pushing Image') {
+       def dcontent = libraryResource 'org/k9/docker/maven';
+       writeFile file: 'Dockerfile', text: dcontent
+       this.app = this.script.docker.build("amydocker/springboot:latest")
+    }
+  }
   void dpush() {
     this.script.stage('Pushing Image') {
         this.script.docker.withRegistry('https://registry.hub.docker.com', 'dlogin') {
-            def app = this.script.docker.build("amydocker/springboot:latest")
-            app.push()
+            this.app.push()
         }
     }
   }
