@@ -11,7 +11,8 @@ class Deploy implements Serializable {
 
   void deployFromDimage() {
     this.script.stage('Deploying In OpenShift') {
-	this.script.sh("oc new-app docker.io/amydocker/springboot:latest --name=springboot -n atest1")
+	this.script.sh("oc new-app docker.io/amydocker/springboot:latest --name=" + this.config.appname + " -n " + this.config.namespace)
+	//this.script.sh("oc new-app docker.io/amydocker/springboot:latest --name=springboot -n automata-daac")
     }
   }
 }
