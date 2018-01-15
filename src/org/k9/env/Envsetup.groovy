@@ -9,7 +9,7 @@ class Maven implements Serializable {
     this.script = script
   }
 
-  void build() {
+  void tool() {
     this.script.stage('Environment Setup') {
         this.script.sh("echo '***********************ENV Setup Done***********************'")
     }
