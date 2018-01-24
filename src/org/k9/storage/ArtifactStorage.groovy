@@ -11,12 +11,12 @@ class ArtifactStorage implements Serializable {
 
   void upload() {
     this.script.stage('Upload Artifcat') {
-      this.script.sh("curl -v -u admin:admin123 --upload-file ${this.script.env.WORKSPACE}/target/spring-boot-rest-example-0.4.0.war http://104.198.70.215:8081/repository/demo/")
+      this.script.sh("curl -v -u admin:admin123 --upload-file ${this.script.env.WORKSPACE}/target/spring-boot-rest-example-0.4.0.war http://35.193.79.215:8081/repository/demo/")
     }
   }
   void download() {
     this.script.stage('Upload Artifcat') {
-           this.script.sh("curl -o spring-boot-rest-example-0.4.0.war -u admin:admin123 http://104.198.70.215:8081/repository/demo/spring-boot-rest-example-0.4.0.war")
+           this.script.sh("curl -o spring-boot-rest-example-0.4.0.war -u admin:admin123 http://35.193.79.215:8081/repository/demo/spring-boot-rest-example-0.4.0.war")
     }
   }
 }
