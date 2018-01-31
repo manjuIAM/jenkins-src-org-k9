@@ -8,10 +8,10 @@ see [Jenkins.io](https://jenkins.io/doc/book/pipeline/shared-libraries/)
     +- src                     # Groovy source files
     |   +- org
     |       +- k9
-    |           +- scm
+    |           +- scm (scm,docker,builder,openshift...)
     |           	+- Git.groovy
     +- resources               # resource files (external libraries only)
     |   +- org
     |       +- k9
-    |           +- docker
+    |           +- docker (docker,config)
     |           	+- maven   # Based on environment name
