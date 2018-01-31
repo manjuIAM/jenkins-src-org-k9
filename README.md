@@ -1,5 +1,5 @@
 ----
-## what is Markdown?
+## Extended Shared Library
 see [Jenkins.io](https://jenkins.io/doc/book/pipeline/shared-libraries/)
 
 > Pipeline has support for creating "Shared Libraries" which can be defined in external source control repositories and loaded into existing Pipelines.
