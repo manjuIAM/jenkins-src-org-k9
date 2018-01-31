@@ -1,6 +1,0 @@
----
-pipelineType: python
-runTests: true
-testCommand: "pytest test.py"
-deployUponTestSuccess: true
-deploymentEnvironment: "staging"
